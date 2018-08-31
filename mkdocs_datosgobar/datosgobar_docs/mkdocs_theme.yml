@@ -1,0 +1,10 @@
+# Config options for 'amelia' theme
+
+extends: material
+
+hljs_style: github
+
+logo: 'images/logo.svg'
+
+
+

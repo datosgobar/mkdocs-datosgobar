@@ -1,9 +1,18 @@
-from setuptools import setup, find_packages
-from distutils.core import Command
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
+from __future__ import print_function
+from __future__ import with_statement
 import os
 
-VERSION = '1.0'
+from setuptools import setup, find_packages
+from distutils.core import Command
 
+VERSION = '1.0.0'
+
+with open(os.path.abspath("requirements.txt")) as f:
+    requirements = [req.strip() for req in f.readlines()]
 
 setup(
     name="mkdocs-datosgobar",
@@ -15,7 +24,7 @@ setup(
     author_email='datos@modernizacion.gob.ar',
     packages=find_packages(),
     include_package_data=True,
-    install_requires=['mkdocs>=1.0'],
+    install_requires=requirements,
     python_requires='>=2.7.9,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*',
     entry_points={
         'mkdocs.themes': [

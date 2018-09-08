@@ -23,5 +23,7 @@ nav:
 
 theme: datosgobar_docs
 
-extra_css:
-  - css/extra.css
+# extensiones recomendadas con este theme
+markdown_extensions: [fenced_code, codehilite, admonition]
+
+

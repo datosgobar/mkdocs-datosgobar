@@ -99,3 +99,9 @@ hr {
 .md-typeset table tr:first-child td {
     font-weight: bold;
 }
+.md-typeset table tr:first-child th {
+    font-weight: bold;
+}
+
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}

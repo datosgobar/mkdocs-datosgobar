@@ -86,15 +86,35 @@ hr {
     color: #00739b;
 }
 
-.md-typeset .md-typeset__table {
-  width: 100%;
+.md-typeset .md-typeset__table{
+  display: inline;
+}
+.md-typeset .md-typeset__table table {
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+.md-typeset table:not([class]) th:not([align]), .md-typeset table:not([class]) td:not([align]) {
+    text-align: center;
+}
+.md-typeset table tr:first-child td {
+    font-weight: bold;
+}
+.md-typeset table tr:first-child th {
+    font-weight: bold;
 }
 
-.md-typeset__table table {
-    width: auto !important;
-    margin: 0 auto !important;
+tr:nth-child(even) {background: rgba(0, 0, 0, 0.04)}
+tr:nth-child(odd) {background: #FFF}
+
+table {
+    margin: 0 auto;
 }
 
-.md-typeset__table table td {
-    text-align: center !important;
+tbody {
+    display: inline;
+}
+
+.wy-nav-top {
+    background: rgb(0, 0, 185);
 }

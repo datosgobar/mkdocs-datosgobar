@@ -118,3 +118,7 @@ tbody {
 .wy-nav-top {
     background: rgb(0, 0, 185);
 }
+
+.md-typeset .admonition, .md-typeset details {
+    font-size: 1.6rem
+}

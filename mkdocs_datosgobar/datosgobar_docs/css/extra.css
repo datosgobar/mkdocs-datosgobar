@@ -122,3 +122,11 @@ tbody {
 .md-typeset .admonition, .md-typeset details {
     font-size: 1.6rem
 }
+
+h1 .toclink, h2 .toclink, h3 .toclink, p, li {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+body {
+    color: rgba(0, 0, 0, 0.6);
+}

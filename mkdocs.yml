@@ -4,26 +4,41 @@ site_description: Documentación de la API de Series de Tiempo de la República 
 site_author: Datos Argentina
 repo_url: https://github.com/datosgobar/series-tiempo-ar-api/
 
+
+
 nav:
   - Inicio: index.md
   - Usuarios:
-    - Comenzar a usar la API de Series de Tiempo: quick_start.md
-    - Filtrar y transformar las series: additional_parameters.md
-    - Integrar la API en planillas de cálculo: spreadsheet_integration.md
-    - Usar en python: python_usage.md
-    - Referencia API:
-      - Datos: 'reference/api_reference.md'
-      - Metadatos: 'reference/search_reference.md'
-      - OpenAPI: https://datosgobar.github.io/series-tiempo-ar-api
+      - Comenzar a usar la API de Series de Tiempo: quick_start.md
+      - Filtrar y transformar las series: additional_parameters.md
+      - Integrar la API en planillas de cálculo: spreadsheet_integration.md
+      - Usar en python: python_usage.md
+      - Referencia API:
+          - Datos: 'reference/api_reference.md'
+          - Metadatos: 'reference/search_reference.md'
+          - OpenAPI: https://datosgobar.github.io/series-tiempo-ar-api
   - Aplicaciones: applications.md
   - Desarrolladores:
-    - Arquitectura: 'developers/arquitectura.md'
-    - Instalación: 'developers/development.md'
-    - Administración: 'developers/admin.md'
+      - Arquitectura: 'developers/arquitectura.md'
+      - Instalación: 'developers/development.md'
+      - Administración: 'developers/admin.md'
 
 theme: datosgobar_docs
 
-# extensiones recomendadas con este theme
-markdown_extensions: [fenced_code, codehilite, admonition]
+# # extensiones recomendadas con este theme
+markdown_extensions:
+  - markdown.extensions.toc:
+      title: 'Lista de contenidos'
+      anchorlink: true
+      permalink: '&#128279;'
 
+      
+  - fenced_code
+  - codehilite
+  - admonition
+  - fontawesome_markdown
 
+# plugins:
+#     - pdf-export:
+#         verbose: true
+#         media_type: print

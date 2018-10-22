@@ -123,7 +123,6 @@ tbody {
     font-size: 1.6rem
 }
 
-<<<<<<< HEAD
 h1 .toclink, h2 .toclink, h3 .toclink, p, li {
     color: rgba(0, 0, 0, 0.54);
 }
@@ -131,9 +130,3 @@ h1 .toclink, h2 .toclink, h3 .toclink, p, li {
 body {
     color: rgba(0, 0, 0, 0.6);
 }
-=======
-p img {
-    margin: 0 auto;
-    display: block;
-}
->>>>>>> 08fd6ea867c62afe5b5544619113a5f1f1779f5a

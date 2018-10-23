@@ -36,7 +36,7 @@ markdown_extensions:
   - fenced_code
   - codehilite
   - admonition
-  - fontawesome_markdown
+#   - fontawesome_markdown
 
 # plugins:
 #     - pdf-export:

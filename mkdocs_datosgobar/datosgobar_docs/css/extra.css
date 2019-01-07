@@ -114,11 +114,15 @@ tr:nth-child(odd) {
 }
 
 table {
+    text-align: center;
     margin: 0 auto;
+    display: table;
+    width: 100%;
 }
 
 tbody {
-    display: inline;
+    display: table;
+    width: 100%;
 }
 
 .wy-nav-top {

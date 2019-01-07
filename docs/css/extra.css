@@ -10,3 +10,11 @@ tbody {
 .wy-nav-top {
 	background: rgb(0, 0, 185);
 }
+
+.recomendado {
+	color: green;
+}
+
+.no-recomendado {
+	color: red;
+}

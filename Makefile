@@ -33,3 +33,6 @@ install: clean ## install the package to the active Python's site-packages
 pypi: dist ## register the package to PyPi get travis ready to deploy to pip
 	twine upload dist/*
 	python travis_pypi_setup.py
+
+pdf:
+	python md2pdf.py docs/guia_metadatos.md docs/pdf/guia_metadatos.pdf

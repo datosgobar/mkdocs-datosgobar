@@ -118,7 +118,7 @@ input {
   color: #777777;
   -webkit-font-feature-settings: "kern", "liga";
           font-feature-settings: "kern", "liga";
-  font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: 'Gotham', "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 pre,
 code,
@@ -2677,7 +2677,7 @@ tbody {
 }
 
 h1 .toclink, h2 .toclink, h3 .toclink, h4 .toclink, h5 .toclink, h6 .toclink, p, li {
-  color: #999999 !important; 
+  color: #000000 !important; 
 }
  
 h1 {
@@ -2704,11 +2704,12 @@ h3 {
 p, li {
   color: #000000 !important;
   font-size: 24px; 
-  font-weight: 300;
+  font-weight: 400;
 }
 
 li {
   margin-top: 20px;
+  padding-top: -10px;
 }
 
 ul {
@@ -2716,12 +2717,13 @@ ul {
 }
 
 ul li::before {
-  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  content: "\2022"; font-size:30px; /* Add content: \2022 is the CSS Code/unicode for a bullet */
   color: #4bba77;
   font-weight: bold; /* If you want it to be bold */
   display: inline-block; /* Needed to add space between the bullet and the text */ 
-  width: 2em; /* Also needed for space (tweak if needed) */
+  width: 1em; /* Also needed for space (tweak if needed) */
   margin-left: -1em; /* Also needed for space (tweak if needed) */
+  margin-top: -1em;
 }
 
 

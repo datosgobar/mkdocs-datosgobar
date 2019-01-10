@@ -2747,6 +2747,16 @@ th {
   color: #ffffff;
 }
 
+code {
+  background-color: #eaeaea;
+  color: #000000;
+}
+
+a {
+  font-weight: 400;
+  color: #000000;
+}
+
 .md-typeset iframe, .md-typeset img, .md-typeset svg {
   max-width: 100%;
   margin: 0 auto;

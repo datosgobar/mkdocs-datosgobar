@@ -60,7 +60,7 @@ def title_to_name(title, decode=True, max_len=None, use_complete_words=True):
     return normalized_title
 
 
-def _parse_section_paths_from_nav(nav):
+def _parse_section_paths_from_nav(nav, docs_dir="docs"):
     """Genera una lista de los paths a los md de las secciones de un mkdocs.
 
     Nav de ejemplo en mkdocs.yml:
@@ -85,12 +85,23 @@ def _parse_section_paths_from_nav(nav):
     for section in nav:
         for value in section.values():
             if isinstance(value, list):
-                section_paths.extend(_parse_section_paths_from_nav(value))
+                section_paths.extend(
+                    _parse_section_paths_from_nav(value, docs_dir))
             else:
                 section_paths.append(
-                    os.path.join("docs", value)
+                    os.path.join(docs_dir, value)
                 )
     return section_paths
+
+
+def _fix_images(html, abs_docs_path="./"):
+    """Crea los links internos entre las secciones del mkdocs."""
+    soup = BeautifulSoup(html, features="html.parser")
+
+    for img in soup.find_all("img"):
+        img["src"] = abs_docs_path + img["src"]
+
+    return soup.prettify()
 
 
 def _fix_section_anchor_links(html, markdown_paths):
@@ -119,7 +130,8 @@ def main(input_paths_str, output_path):
     if input_paths_str == "mkdocs.yml":
         with open(input_paths_str, "rb") as f:
             docs_options = yaml.load(f.read())
-        input_paths = _parse_section_paths_from_nav(docs_options["nav"])
+        input_paths = _parse_section_paths_from_nav(
+            docs_options["nav"], docs_options.get("docs_dir", "docs"))
     # asume que se pasa una lista de paths separados por comas
     else:
         input_paths = input_paths_str.split(",")
@@ -127,10 +139,12 @@ def main(input_paths_str, output_path):
     # lee los htmls a convertir en PDF
     htmls = []
     for input_path in input_paths:
-        with open(input_path) as input_file:
-            htmls.append(markdown.markdown(
-                input_file.read(),
-                extensions=["fenced_code", "codehilite", "admonition"]))
+        # sólo se procesa si es un markdown
+        if input_path.split(".")[-1] == "md":
+            with open(input_path) as input_file:
+                htmls.append(markdown.markdown(
+                    input_file.read(),
+                    extensions=["fenced_code", "codehilite", "admonition"]))
     print("Hay {} documentos a convertir en un solo PDF.".format(len(htmls)))
 
     # guarda html
@@ -151,8 +165,7 @@ def main(input_paths_str, output_path):
         )
 
     # corrige el html para el pdf
-    html = html.replace('img alt="alt text" src="',
-                        'img alt="alt text" src="{}'.format(ABS_DOCS_PATH))
+    html = _fix_images(html, ABS_DOCS_PATH)
 
     # guarda pdf
     pdfkit.from_string(html, output_path, options={"encoding": "utf8"},

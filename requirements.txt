@@ -3,4 +3,6 @@ markdown
 mkdocs-material
 pymdown-extensions
 pdfkit
+bs4
+unidecode
 

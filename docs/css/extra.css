@@ -18,3 +18,7 @@ tbody {
 .no-recomendado {
 	color: red;
 }
+
+.md-header {
+    height: 3.2rem !important;
+}

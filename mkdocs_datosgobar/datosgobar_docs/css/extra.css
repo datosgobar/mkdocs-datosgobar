@@ -165,3 +165,6 @@ body {
     color: red;
 }
 
+.md-header {
+    height: 72px !important;
+}

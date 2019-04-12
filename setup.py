@@ -9,7 +9,7 @@ import os
 from setuptools import setup, find_packages
 from distutils.core import Command
 
-VERSION = '1.0.13'
+VERSION = '1.0.14'
 
 with open(os.path.abspath("requirements.txt")) as f:
     requirements = [req.strip() for req in f.readlines()]
